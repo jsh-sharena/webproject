@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 定位</title>
+    <style>
+        #div01{
+            border: solid 2px orange;
+            height: 200px;
+            width: 800px;
+            margin-bottom: 10px;
+            margin-top: 50px;
+            z-index: 1;
+        }
+        #showdiv{
+            border: solid 3px;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 10px;
+            z-index:2;
+        }
+        #div02{
+            border: dashed 2px rgb(0, 17, 255);
+            height: 200px;
+            width: 800px;
+            margin-bottom: 10px;
+            position: relative; /*相对定位*/
+            left: 40px; /*是相对自己原有的位置移动*/
+            bottom: 50px;
+            z-index: 3;
+
+        }
+        #div03{
+            border: dashed 2px rgb(0, 255, 170);
+            height: 200px;
+            width: 800px;
+            position: relative;
+            z-index: 4;
+        }
+        #div04{
+            border: dashed 2px rgb(255, 153, 0);
+            height: 200px;
+            width: 800px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div id="showdiv">
+
+        </div>
+    </div>
+    <div id="div02">新年快乐</div>
+    <div id="div03"></div>
+    <div id="div04"></div>
+</body>
+</html>

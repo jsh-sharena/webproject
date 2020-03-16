@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>一个最简单的表单</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form target="_blank" action="welcome.php" method="POST" autocomplete="off">
+            <label for="name"> 名字:<input type="text" name="name" autofocus> </label><br><br>
+            <label for="email">邮箱:<input type="text" name="emial"> </label><br><br>
+            <label for="sex">性别:<input type="text" name="sex" autocomplete="on">
+                <select>
+                    <option>男</option>
+                    <option>女</option>
+                    <optgroup label="HH">
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                    </optgroup>
+                    <optgroup label="xixi">
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                        <option>2</option>
+                    </optgroup>
+                    <optgroup label="meme">
+                        <option>3</option>
+                        <option>3</option>
+                        <option>3</option>
+                        <option>3</option>
+                        <option>3</option>
+                        <option>3</option>
+                    </optgroup>
+                </select>
+            </label> <br><br>
+            <label for="password">密码:<input type="password" name="password"></label> <br><br>
+            <button type="submit">提交</button>
+        </form>
+    </body>
+</html>

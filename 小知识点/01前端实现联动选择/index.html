@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.min.js"></script>
+    <title>前端联动选择</title>
+</head>
+<body>
+    <select name="" id="selProvince">
+        <option value="">----请选择----</option>
+    </select>
+    <select name="" id="selCity">
+        <option value="">----请选择----</option>
+    </select>
+    <select name="" id="selCountry">
+        <option value="">----请选择----</option>
+    </select>
+
+    <script>
+        var iNum1;
+        var iNum2;
+        var aProvince=['湖北','江苏','安徽'];
+        var aCity=[['武汉','黄冈','荆门'],['南京','无锡','镇江'],['合肥','安庆','黄山']]
+        var aCountry=[
+            [['武汉1','武汉2'],['黄冈1','黄冈2'],['荆门1','荆门2']],
+            [['南京1','南京2'],['无锡1','无锡2'],['镇江1','镇江2']],
+            [['合肥1','合肥2'],['安庆1','安庆2'],['黄山1','黄山2']]];
+        
+        $(function(){
+            // 遍历省级
+            for(var i=0;i<aProvince.length;i++){
+                $('#selProvince').append('<option>' + aProvince[i] + '</option>');
+            };
+            
+            // 省与市级二级联动
+            $('#selProvince').change(function(){   //利用select下拉框的change()方法，当下拉款值发生改变的时候，触发事件
+                $('#selCity').children().not(':eq(0)').remove();//当选择其他省的时候，把之前市、县的内容清空掉
+                $('#selCountry').children().not(':eq(0)').remove();
+                iNum1=$(this).children('option:selected').index();//获取你所选取的省对应的位置，可以打印出来瞧瞧
+                var aaCity = aCity[iNum1-1];
+                for(var j=0;j<aaCity.length;j++){
+                    $('#selCity').append('<option>'+aaCity[j]+'</option>');
+                }
+            });
+
+            // 市级与县级联动
+            $('#selCity').change(function(){
+                $('#selCountry').children().not(':eq(0)').remove();//当选择其他市的时候，把之前县的内容清空掉
+                iNum2=$(this).children('option:selected').index();
+                var aaCountry = aCountry[iNum1-1][iNum2-1];
+                for(var k=0;k<aaCountry.length;k++){
+                    $('#selCountry').append('<option>'+ aaCountry[k] + '</option>');
+                }
+            })
+        })
+    </script>
+</body>
+</html>

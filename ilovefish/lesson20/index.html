@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iuput实现搜索框样式 </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="welcome.php" method="GET" enctype="multipart/form-data">
+            <!-- input实现搜索框样式 -->
+            <label>你想要看小甲鱼哪个课程：<input type="search" name="search"></label>
+            <br><br>
+
+            <!-- 使用input实现颜色选择框 -->
+            <label>亲爱的，选个颜色：<input type="color" name="color"></label>
+            <br><br>
+
+            <!-- 使用input实现图像按钮 -->
+            <label>别看我是一只龟，我还是一颗按钮：<input type="image" src="turtle.jpg" alt="turtle"></label>
+            <input type="submit" value="提交">
+            <br><br>
+
+            <!-- 使用input使用隐藏 -->
+            <label>要你有何用按钮-><input type="hidden" value="你看不到" disabled></label>
+            <br><br>
+
+            <!-- input实现文件上传,并限制上传文件的尺寸 -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="1024">
+            <label>请选择您要上传的文件<input type="file" name="file" accept="image/*" multiple></label>
+            <br><br>
+
+            <!-- input限制数字输入 -->
+            <label>姑娘，不知今年芳龄如何？<input type="number" name="age" min="1" max="100" step="1"></label>
+            <br><br>
+
+            <!-- input实现数值滚动条 -->
+            <label>你问我爱你有多深，我爱你有<input type="range" name="love" value="1" min="1" max="10000" step="100">分</label>
+            <br><br>
+
+            <!-- input获取邮箱，电话，和网址 -->
+            <label>邮箱：<input required type="email" name="email" pattern="\w[-\w.+]*@(163.com|126.col-md-3)" placeholder="仅限163及126邮箱"></label>
+            <br><br>
+            <label>电话：<input required type="tel" name="tel" pattern="0?(13|14|15|17|18|19)[0-9]{9}" placeholder="仅限座机号码"></label>
+            <br><br>
+            <label>网址：<input required type="url" name="url" pattern="^((https|http)?:\/\/)[^\s]+" placeholder="仅限以hhtp及https开头的网址" maxlength="22" list="urllist"></label>
+            <br><br>
+            <input type="submit" value="提交">
+        </form>
+
+        <datalist id="urllist" >
+            <option value="http://www.baidu.com">🐠</option>
+            <option value="https://fishc.com.cn">🐖</option>
+            <option value="https://ilovefishc.com">o(=•ェ•=)m</option>
+        </datalist>
+    </body>
+</html>

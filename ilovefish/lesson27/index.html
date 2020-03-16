@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>图像映射 </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <img src="pic.jpg" alt="《零基础入门欢乐圣诞》" usemap="#book">
+        <map name="book">
+            <!-- circle需要提供圆心的坐标及半径 -->
+            <area shape="circle" coords="100,140,160" alt="Cup of coffee" href="https://fishc.com.cn" target="_blank">
+            <!-- poly需要提供多边形每个店的坐标 -->
+            <area shape="poly" coords="279,230,867,549,636,975,46,655" alt="BOOK" href="https://www.baidu.com" target="_blank">
+            <!-- rect需要提供矩形左上角和右下角的坐标 -->
+            <area shape="rect" coords="300,100,500,200" alt="Trutle" href="https://man.ilovefishc.com" target="_blank">
+        </map>
+
+        <!-- 图像适配 -->
+        <picture>
+            <source media="(min-width:1024px)" srcset="rabbit.jpg">
+            <source media="(min-width:512px)" srcset="bird.jpg">
+            <img src="water.jpg">
+        </picture>
+
+        <!-- 插图 -->
+        <P>
+                国际C语言混乱代码大赛（IOCCC, The International Obfuscated C Code Contest）
+                是一项国际编程赛事，从1984年开始，每年举办一次（1997年、1999年、2002年、2003年和2006年例外）。
+                目的是写出最有创意的最让人难以理解的C语言代码。
+        </P>
+        <figure>
+            <img src="code.png" alt="国际C语言混乱代码大赛">
+            <figcaption>国际C语言混乱代码大赛</figcaption>
+        </figure>
+
+        <!-- 在网页中嵌入视频 -->
+        <video src="DAOKO-a n n i v e r s a r y(标清).mp4" width="640" height="352" controls autoplay muted>非常抱歉，本视频由于不可抗拒因素，无法播放</video>
+            <track src="track.vtt" srclang="zh" label="中文字幕" kind="subtitles" default>
+        <!-- 在网页中嵌入音频 -->
+        <
+    </body>
+</html>

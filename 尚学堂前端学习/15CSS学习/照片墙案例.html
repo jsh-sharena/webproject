@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片墙案例</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+            background-color: gray;
+        }
+        img{
+            width: 20%;
+            /* border: solid 1px red; */
+            padding: 10px;
+            background-color: white;
+            transform: rotate(-10deg);/* 旋转度数，正数是顺时针旋转，*/
+            margin: 20px;
+        }
+        /* 使用伪类给标签添加样式 */
+        img:hover{
+            transform: rotate(0deg) scale(1.5);/*设置旋转角度和缩放比例*/
+            z-index: 1;/*显示优先级*/
+            transition: 1.5s;/*设置显示时间*/
+        }
+    </style>
+</head>
+<body>
+    <img src="img/1.jpg" alt="">
+    <img src="img/2.jpg" alt="">
+    <img src="img/3.jpg" alt="">
+    <img src="img/4.jpg" alt="">
+    <img src="img/5.jpg" alt="">
+    <img src="img/6.jpg" alt="">
+    <img src="img/7.jpg" alt="">
+    <img src="img/8.jpg" alt="">
+
+</body>
+</html>

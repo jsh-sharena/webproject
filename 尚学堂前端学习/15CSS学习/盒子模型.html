@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型简单的布局</title>
+    <style type="text/css">
+        div{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+        }
+        #header，#footer{
+            width: 650px;
+            margin-top: 20px;
+        }
+        #div01{
+            border: solid 1px orange;
+            float: left;
+            margin-left: 20px;
+        }
+        #div02{
+            border: solid 1px blueviolet;
+            float: left;
+
+        }
+        #div03{
+            border: solid 1px red;
+            float: left;
+        }
+        #div04{
+            border: solid 1px blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="div01">我是01</div>
+        <div id="div02">我是02</div>
+    </div>
+    <div id="footer">
+        <div id="div03">我是03</div>
+        <div id="div04">我是04</div>
+    </div>
+    
+</body>
+</html>

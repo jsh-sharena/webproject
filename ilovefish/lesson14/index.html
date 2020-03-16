@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>一个简单的表格 </title>
+        <meta charset="utf-8">
+        <style>
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+             thead th{
+                border: 1px solid black;
+                background-color: grey;
+                color: white;
+            }
+            tbody th{
+                border: 1px solid black;
+                background-color: lightgrey;
+                color: white;
+            }
+
+            td{
+                border: 1px solid black;
+                padding: 5px;
+            }
+            img{
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 添加一些废话 -->
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>随便说句话</th>
+            </tr>
+            <tr>
+                <td>小甲鱼</td>
+                <td>18</td>
+                <td>编程改变世界</td>
+            </tr>
+            <tr>
+                <td>不如二十</td>
+                <td>28</td>
+                <td>热爱编程的人哈，运气总不会太差。</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table>
+            <caption>香蜜演员介绍</caption>
+        <!-- 香蜜演员介绍 -->
+            <thead>
+                <tr>
+                    <th>外号</th>
+                    <th>姓名</th>
+                    <th>图片</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>锦觅</th>
+                    <td>杨紫</td>
+                    <td><img src="img/锦觅.jpg" alt="锦觅"></td>
+                </tr>
+                <tr>
+                    <th>凤凰</th>
+                    <td>邓伦</td>
+                    <td><img src="img/凤凰.jpg" alt="凤凰"></td>
+                </tr>
+                <tr>
+                    <th>鎏英</th>
+                    <td>陈钰琪</td>
+                    <td><img src="img/鎏英.jpg" alt="鎏英"></td>
+                </tr>
+                <tr>
+                    <th>润玉</th>
+                    <td>罗云熙</td>
+                    <td><img src="img/小鱼仙倌.jpg" alt="小鱼仙倌"></td>
+                </tr>
+            </tbody>
+            
+            <tfoot>
+                <tr>
+                    <td colspan="4">上述资料均为小甲鱼个人主观臆断，非官方资料，仅供娱乐</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- 修改代码让中间列跨行 -->
+        <table>
+            <!-- 将第一列的背景颜色为红色，第二三列的背景颜色为绿色 -->
+            <colgroup>
+                <col style="background: red;">
+                <col span="2" style="background: green;">
+            </colgroup>
+            <tr>
+                <td>1</td>
+                <td rowspan="3">2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <!-- <td>5</td> -->
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <!-- <td>8</td> -->
+                <td>9</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

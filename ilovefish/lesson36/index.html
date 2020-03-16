@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>善变的a元素</title>
+    <style type="text/css">
+    /* 请在此处定制a元素“4个状态”的不同样式 */
+
+    /* 链接未被访问的时候 */
+        a:link{
+            color: pink;
+        }
+    /* 链接被访问过的时候 */
+        a:visited{
+            color: red;
+        }
+    /* 鼠标悬停在链接上方时 */
+        a:hover{
+            color: black;
+        }
+    /* 鼠标在摁下的那一刻 */
+        a:active{
+            color: green;
+        }
+        
+        /* 设置当元素获得焦点时的样式 */
+        input#boy:focus{
+            background-color: greenyellow;
+        }
+        input#girl:focus{
+            background-color: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://ilovefishc.com" target="_blank">互联网的广大朋友大家好，我是小甲鱼^o^</a>
+
+    <form>
+        <label>他的名字：</label>
+        <input type="text" name="name" id="boy">
+        <br><br>
+        <label>她的名字：</label>
+        <input type="text" name="name" id="girl">
+    </form>
+</body>
+</html>

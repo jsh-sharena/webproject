@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>使用output元素显示结果 </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)" action="welcome.php" method="GET">
+            0<input type="range" id="a" value="50" min="0" max="100">100+
+            <input type="number" id="b" value="50">=
+            <!-- 使用output元素显示结果 -->
+            <output name="x" for="a b">100</output>
+            <br><br>
+
+            <!-- 接收多行文本输入 指定文本区的高度和宽度 -->
+            <textarea name="saysth" rows="5" cols="30" wrap="hard">
+                左手一条龙，右手一彩虹。
+            </textarea>
+            <br>
+            <input type="submit" value="提交">
+          
+        </form>
+    </body>
+</html>

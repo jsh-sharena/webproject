@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <meta charset="utf-8">
+        <style>
+         /* 通过list-style-type设置列表的标志  */
+            ul.a{list-style-type: square;}
+            ul.b{list-style-type: cjk-ideographic;}
+            ul.c{list-style-type: armenian;}
+            ul.d{list-style-type: lower-alpha;}
+
+        /* 使用list-style-image设置列表标志 */
+            ol{
+                list-style-image: url("img/light.jpg");
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 使用ul元素创建一个无序列表 -->
+        <ul class="a">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <ul class="b">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <ul class="c">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <ul class="d">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+
+        <!-- 使用ol创建一个有序列表 -->
+        <ol type="I" reversed >
+            <li>HTML5 &CSS3</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+            <li>Bootstrap</li>
+            <li>Vue</li>
+            <li>PHP</li>
+        </ol>
+
+        <!-- 使用dl创建定义列表  单条术语及描述-->
+        <dl>
+            <dt>fishc.com.cn</dt>
+            <dd>一个神奇的论坛</dd>
+        </dl>
+       
+
+    </body>
+</html>

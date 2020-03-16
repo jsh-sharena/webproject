@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS的运算符学习</title>
+    <!--     
+        JS的运算符学习:
+            算术运算符：
+                加法：+
+                减法：-
+                乘法：*
+                除法：/
+                余数：%
+            (适应场景):
+                number类型与number类型
+                number类型与boolean类型(true--1,false--0)
+                number类型与string类型(*,/,%,-)
+                string类型与string类型的数字(*,/,%,-)
+                string类型数字与boolean类型(*,/,%,-)
+            在算术运算中如果两边的数据类型不是number的话，会使用Number()强转后再进行运算，
+            字符串的加法作为字符链接，不会运算。
+
+            注意:
+                在字符串中“+”符合代表的是字符串的连接符，不会参与运算
+
+            逻辑运算符：
+                ! & && | ||
+                首先在复习下 js 中布尔值为false的六种情况
+                    1、undefined（未定义，找不到值时出现）
+                    2、null（代表空值）
+                    3、false（布尔值的false，字符串"false"布尔值为true）
+                    4、0（数字0，字符串"0"布尔值为true）
+                    5、NaN（无法计算结果时出现，表示"非数值"；但是typeof NaN===“number”）
+                    6、""（双引号）或’’（单引号） （空字符串，中间有空格时也是true）
+                注意空数组空对象，负值转的布尔值时都为tru
+                && 例：a && b
+                    只要 && 前面是 false，无论 && 后面是true还是 false，结果都将返 && 前面的值;
+                    只要 && 前面是 true，无论 && 后面是true还是 false，结果都将返 && 后面的值;
+                || 例：a || b
+                    只要 || 前面为 false，无论 || 后面是true还是 false，结果都返回 || 后面的值。
+                    只要 || 前面为 true，无论 || 后面是true还是 false，结果都返回 || 前面的值。
+            关系运算符：返回值为true或者false
+                !=:
+                >=:
+                <=:
+                >:
+                <:
+            自增运算符：
+                ++：a++,++a
+                --：
+                +=：
+                -=：
+                ==:
+                ===:
+
+    -->
+     <!-- 声明js代码域 -->
+    <script type="text/javascript">
+        // 声明变量：算术运算
+        var a=123;
+        var b=2;
+        var c=true;
+        var d="1";
+
+        alert(a+b);
+        alert(c+d);
+        alert(b-d);
+        // 声明变量：逻辑运算
+        var a1=true;
+        var b1=false;
+        var c1=true;
+        alert(a1&b1);
+        alert(a1&&b1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

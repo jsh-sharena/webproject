@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <heade>
+        <meta charset="utf-8">
+        <title>将旧时代的div元素替换为HTML5提供的新语义元素</title>
+        <style>
+            header{
+                background-color: #429296;
+                color: white;
+                text-align: center;
+                padding: 5px;
+            }
+            aside{
+                line-height: 30px;
+                background-color: #eeeeee;
+                height: 300px;
+                width: 100px;
+                float: left;
+                padding: 15px;
+            }
+            section{
+                width: 600px;
+                float: left;
+                padding: 10px;
+            }
+            footer{
+                background-color: #429296;
+                color: white;
+                clear: both;
+                text-align: center;
+                padding: 5px;
+            }
+        </style>
+    </heade>
+    <body>
+        <!-- 将旧时代的div元素替换为HTML5提供的新语义元素,语义与实现分离 -->
+        <header>
+            <h1>《零基础入门学习web开发》（HTML5&CSS3）</h1>
+        </header>
+
+       <!-- 定义侧边栏（术语条目，作者简介，相关链接） -->
+       <aside>
+           <p><a href="https://www.bilibili.com/video/av21786264/" target="blank">在线学习</a></p>
+           <p><a href="https://fishc.com.cn/forum-354-1.html " target="blank">课后作业</a></p>
+           <p><a href="https://man.ilovefishc.com/html5/" target="blank">HTML速查宝典</a></p>
+           <p><a href="https://fishc.taobao.com" target="blank">资源打包</a></p>
+       </aside>
+       
+
+       <section>
+           <details open>
+                <summary >Web开发是什么</summary>
+                <p>很多同学可能还不明白，Web开发是什么？</p>
+                <p>
+                    Web前端开发技术包括三个要素：HTML、CSS、JavaScript，随着RIA的流行和普及，XML、Flash/Flex、Silverlight和服务器端语言也是前端开发工程师应该掌握的。
+                    随着时代的发展，前端开发技术的三要素也演变成为现今的：HTML5、CSS3、jquery。Web前端开发工程师既要与上游的交互设计师、视觉设计师和产品经理沟通，
+                    又要与下游的服务器端工程师沟通，需要掌握的技能非常多。这就从知识的广度上对Web前端开发工程师提出了要求。如果要精于前端开发这一行，也许要先精十行。
+                    然而，全才总是少有的。所以，对于不太重要的知识，我们只需要“通”即可。但“通”到什么程度才算够用呢？对于很多初级前端开发工程师来说，这个问题是非常令人迷惑的。
+                </p>
+           </details>
+      
+       </section>
+
+       <footer>
+           Copyright@ 鱼C工作室
+       </footer>
+    </body>
+</html>
