@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js模板语法</title>
+    <script src="lib/vue.js"></script>
+    <style>
+        .class1{
+            background: #444444;
+            color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="app">
+        <!-- 使用 v-html 指令用于输出 html 代码 -->
+        <div v-html="message1"></div>
+
+        <!-- HTML 属性中的值应使用 v-bind 指令:判断 use 的值，如果为 true 使用 class1 类的样式，否则不使用该类 -->
+        <label for="r1">修改颜色</label>
+        <input type="checkbox" v-model="use" id="r1">
+        <br><br>
+        <div v-bind:class="{'class1':use}">
+            v-bind:class 指令
+        </div>
+        <br>
+
+ <!-- Vue.js 都提供了完全的 JavaScript 表达式支持 -->
+        {{5+5}}
+        <br>
+        {{ok ? 'YES' : 'NO'}}
+        <br>
+        {{message2.split('').reverse().join('')}}
+        <div v-bind:id="'list-' + id">菜鸟教程</div>
+        <br>
+
+        <!-- 指令是带有 v- 前缀的特殊属性,v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素 -->
+        <p v-if="seen">现在你看到我了</p>
+
+        <!-- 参数在指令后以冒号指明。例如， v-bind 指令被用来响应地更新 HTML 属性 -->
+        <!-- 在这里 href 是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定 -->
+        <pre><a v-bind:href="url">菜鸟教程</a></pre>
+        <!-- 缩写 -->
+        <a :href="url"></a>
+
+        <!-- 另一个例子是 v-on 指令，它用于监听 DOM 事件 -->
+        <a v-on:click="doSomething"></a>
+        <!-- 缩写 -->
+        <a @click="doSomething"></a>
+
+        <!-- 饰符是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定 -->
+        <form v-on:submit.prevent="onSubmit"></form>
+
+        <!-- 在 input 输入框中我们可以使用 v-model 指令来实现双向数据绑定 -->
+        <p>{{message3}}</p>
+        <input v-model="message3">
+
+        <!-- v-model 指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。自动更新绑定的元素的值。
+        按钮的事件我们可以使用 v-on 监听事件，并对用户的输入进行响应。 -->
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">反转字符串</button>
+        <br>
+
+        <!-- 过滤器 -->
+        {{message | capitalize }}
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                    message1:'<h1>菜鸟教程</h1>',
+                    use:true,
+                    ok:true,
+                    message2:'RUNOOB',
+                    id:1,
+                    seen:true,
+                    url:'http://www.runoob.com',
+                    message3:'Runoob!',
+                    message:'jiangsh'
+                },
+            methods:{
+                reverseMessage:function(){
+                    this.message=this.message.split('').reverse().join('')
+                }
+            },
+            filters:{
+                capitalize:function(value){
+                    if(!value)return ''
+                    value = value.toString()
+                    return value.charAt(0).toUpperCase() + value.slice(1)
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
