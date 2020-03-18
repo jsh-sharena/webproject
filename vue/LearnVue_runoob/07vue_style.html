@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js 样式绑定</title>
+    <script src="lib/vue.js"></script>
+    <style>
+        .active{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<!-- class 与 style 是 HTML 元素的属性，用于设置元素的样式，我们可以用 v-bind 来设置样式属性 -->
+    <div id="app">
+        <div v-bind:class="{active:isActive}"></div>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                isActive:true
+            }
+        })
+    </script>
+</body>
+</html>

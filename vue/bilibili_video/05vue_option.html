@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建Vue实例传入的options</title>
+</head>
+<body>
+    <h3>options中可以包含哪些选项？</h3>
+    <p>详细解析：<a href="https://cn.vuejs.org/v2/api/index.html#optionMergeStrategies">Vue API</a></p>
+    <h3>目前掌握这些选项：</h3>
+    <h5>el:</h5>
+    <ul>
+        <li style="color: red;">类型:string|HTMLElement</li>
+        <li>作用:决定之后Vue实例会管理哪一个DOM</li>
+    </ul>
+    <h5>data:</h5>
+    <ul>
+        <li style="color: red;">类型:Object|Function</li>
+        <li>作用:Vue实例对应的数据对象</li>
+    </ul>
+    <h5>methods:</h5>
+    <ul>
+        <li style="color: red;">类型:{[key.string]|function}}</li>
+        <li>作用:定义属于Vue的一些方法，可以再其他地方调用，也可以再指令中使用</li>
+    </ul>
+</body>
+</html>

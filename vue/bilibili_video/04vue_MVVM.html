@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中的MVVM</title>
+</head>
+<body>
+    <h1>Vue中的MVVM(View Model VueModel)</h1>
+    <label>
+        <h3>View层:</h3>
+        <ul>
+            <li>视图层</li>
+            <li>在我们前端开发中，通常就是DOM层</li>
+            <li>主要的作用是给用户展示各种信息</li>
+        </ul>
+        <h3>Model层:</h3>
+            <ul>
+                <li>数据层</li>
+                <li>数据可能是我们固定的死数据，更多的是来自我们服务器，从网络上请求下来的数据。</li>
+                <li>在我们计数器的案例中，就是后面抽取出来的obj，当然，里面的数据可能没这么简单。</li>
+            </ul>
+        <h3>VueModel层:</h3>
+        <ul>
+            <li>视图模型层</li>
+            <li>视图模型层是View和Model沟通的桥梁</li>
+            <li>一方面它实现了Data Binding,也就是数据绑定，将Model的改变实时的反应到View中</li>
+            <li>另一方面它实现了DOM Listener,也就是DOM监听，当DOM发生一些事件(点击、滚动、touch等)时，可以监听到，并在需要的情况下改变对应的Data.</li>
+        </ul>
+    </label>
+    
+</body>
+</html>
