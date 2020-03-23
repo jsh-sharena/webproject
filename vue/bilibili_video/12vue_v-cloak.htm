@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue插值操作</title>
+    <script src="lib/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <h2>{{message}}</h2>
+    </div>
+    <script>
+        //在vue解析之前，div中有一个属性v-cloak
+        //在vue解析之后，div中没有一个属性v-cloak
+
+        setTimeout(function() {
+                const app = new Vue({
+                    el: '#app',
+                    data: {
+                        message: '你好哈',
+                    },
+                })
+            }, 1000) //延迟1秒钟显示
+    </script>
+</body>
+
+</html>
