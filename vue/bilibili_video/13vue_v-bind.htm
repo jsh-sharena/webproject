@@ -28,8 +28,10 @@
         <h2 v-bind:class="active">{{message}}</h2>
         <!-- <h2 v-bind:class="{key1:value1,key2:value2}">{{message}}</h2> -->
         <!-- <h2 v-bind:class="{类名1:true,类名2:boolean}">{{message}}</h2> -->
+        <!-- 对象语法 -->
         <!-- <h2 class="title" v-bind:class="{active:isActive,line:isLine}">{{message}}</h2> -->
         <h2 class="title" v-bind:class="getclasses1()">{{message}}</h2>
+        <!-- 数组语法 -->
         <h2 class="title" :class="[active,line]">{{message}}</h2>
         <h2 class="title" :class='getclasses2()'>{{message}}</h2>
         <button v-on:click=" btnClick">按钮</button>

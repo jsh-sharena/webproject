@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue计算属性基本属性与复杂操作</title>
+    <script src="lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 之前的方法 -->
+        <h2>{{firstName + ' ' + lastName}} </h2>
+        <h2>{{firstName}} {{lastName}} </h2>
+        <h2>{{getFullName()}} </h2>
+
+        <!-- 计算属性方法 -->
+        <h2>{{fullName}}</h2>
+
+        <!-- 计算属性的复杂操作 -->
+        <h2>总价格:{{totalprice}}</h2>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                firstName: 'Lebron',
+                lastName: 'James',
+                books: [{
+                    id: 110,
+                    name: 'Unix编程艺术',
+                    prices: 119
+                }, {
+                    id: 111,
+                    name: '代码大全',
+                    prices: 105
+                }, {
+                    id: 112,
+                    name: '深入理解计算机原理',
+                    prices: 98
+                }, {
+                    id: 113,
+                    name: '现代操作系统',
+                    prices: 87
+                }, ]
+            },
+            // computed:计算属性 
+            computed: {
+                fullName: function() {
+                    return this.firstName + ' ' + this.lastName
+                },
+                totalprice: function() {
+                    let result = 0
+                    for (let i = 0; i < this.books.length; i++) {
+                        result += this.books[i].prices
+                    }
+                    return result
+                }
+            },
+            methods: {
+                getFullName() {
+                    return this.firstName + ' ' + this.lastName
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
