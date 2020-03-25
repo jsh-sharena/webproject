@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 const使用</title>
+    <script src="lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        //注意一：一旦给const修饰的标识符被赋值之后，不能修改
+        //const a = 20;
+        //a = 30;
+
+        //注意二：在使用const定义标识符，必须赋值
+        // const name;
+
+        //注意三：常量的含义是指向的对象不能修改，但是可以修改对象内部的属性
+        const obj = {
+            name: 'why',
+            age: 18,
+            height: 1.88
+        }
+        console.log(obj);
+        //obj = {} 对象不能被修改
+        //对象内部属性可以修改
+        obj.name = 'kobe';
+        obj.age = 40;
+        obj.height = 1.77;
+        console.log(obj);
+    </script>
+</body>
+
+</html>
