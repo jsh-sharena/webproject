@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue组件模板的分离写法</title>
+    <script src="lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-cpn></my-cpn>
+    </div>
+
+    <!-- 1.script标签，注意：类型必须是text/x-template -->
+    <!-- <script type="text/x-template" id="cpn1">
+        <div>
+            <h2> 组件标题1 </h2>
+            <p> 我是组件中的一个段落内容:今天天气不错！ </p>
+        </div>
+    </script> -->
+
+    <!-- 2.template标签 -->
+    <template id="cpn">
+        <div>
+            <h2>消息：{{message}}</h2>
+        </div>
+    </template>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            components: {
+                'my-cpn': {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            message: 'Hello World！'
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>
