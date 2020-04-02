@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue作业(v-for与v-bind的结合)</title>
+    <script src="../lib/vue.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 作业需求：点击列表中的哪一项，那么该项的文字变成红色 -->
+        <ul>
+            <li v-for="(item,index) in movies" :class="{active:currentIndex===index}" @click="liClick(index)">{{index}}.{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好哈',
+                movies: ['海王', '火影', '柯南', '小樱'],
+                currentIndex: 0
+            },
+            methods: {
+                liClick(index) {
+                    this.currentIndex = index
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

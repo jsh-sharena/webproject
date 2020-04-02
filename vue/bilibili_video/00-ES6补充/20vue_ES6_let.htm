@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6语法Let</title>
+    <script src="../lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+    </div>
+    <script>
+        //1.没有块级作用域引起的问题:for的块级
+        //为什么闭包可以解决问题:函数是一个作用域
+        var btns = document.getElementsByTagName('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }
+        //1.情况一：ES5中没有使用闭包(错误的方式)，i其实是在大括号里面定义的
+        //但是因为没有块级作用域在大括号里面和大括号外面定义其实是一样的。
+        //所以i会更新到for循环最后一个值 i=btns.length
+        /*
+        i = 0 {
+                var i = 0
+                btns[i].addEventListener('click', function() {
+                    console.log('第' + i + '个按钮被点击');
+                })
+            } {
+                var i = 1
+                btns[i].addEventListener('click', function() {
+                    console.log('第' + i + '个按钮被点击');
+                })
+            } {
+                var i = 2
+                btns[i].addEventListener('click', function() {
+                    console.log('第' + i + '个按钮被点击');
+                })
+            }
+            */
+        //2.情况二：ES5中使用闭包,闭包是定义一个函数然后立即执行，末尾的(i)就是立即执行函数
+        //因为函数有作用域，所以外部的i变化对内部没有影响，外部的i变化成5,回调函数的时候依旧是传入函数自己的(i)
+        var btns = document.getElementsByTagName('button');
+        for (var i = 0; i < btns.length; i++) {
+            (function(i) { //0
+                btns[i].addEventListener('click', function() {
+                    console.log('第' + i + '个按钮被点击');
+                })
+            })(i)
+        }
+        /*
+        i = 5
+
+        function(i) { //i=0
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }(0)
+
+        function(i) { //i=1
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }(1)
+
+        function(i) { //i=2
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }(2)
+        */
+        //3.情况三：使用ES6语法
+        //ES6中大括号{}有了自己的作用域,使用的是内部自己的i，跟外部i改成多少都没有关系
+        const btns = document.getElementsByTagName('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }
+        /*
+        i = 5 {
+            i = 0
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        } {
+            i = 1
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        } {
+            i = 2
+            btns[i].addEventListener('click', function() {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }
+        */
+    </script>
+</body>
+
+</html>

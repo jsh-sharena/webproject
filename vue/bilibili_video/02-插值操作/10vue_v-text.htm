@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue插值操作</title>
+    <script src="../lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <!-- v-text作用和Mustache比较类似:都是用于将数据显示在界面中
+        v-text通常情况下，接受一个string类型 -->
+        <h2 v-text="message">萌萌哒</h2>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好哈，李银河',
+            },
+        })
+    </script>
+</body>
+
+</html>
