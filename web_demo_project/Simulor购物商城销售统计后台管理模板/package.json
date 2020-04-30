@@ -50,7 +50,7 @@
     "fullcalendar": "^3.9.0",
     "gmaps": "^0.4.24",
     "ion-rangeslider": "^2.2.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jquery-knob": "^1.2.11",
     "jquery-mask-plugin": "^1.14.15",
     "jquery-nice-select": "^1.1.0",
